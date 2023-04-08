@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import { CacheProvider } from '@emotion/react';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
@@ -34,7 +32,6 @@ const App = (props) => {
           content="initial-scale=1, width=device-width"
         />
       </Head>
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
         <AuthProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -47,7 +44,6 @@ const App = (props) => {
             </AuthConsumer>
           </ThemeProvider>
         </AuthProvider>
-      </LocalizationProvider>
     </CacheProvider>
   );
 };
