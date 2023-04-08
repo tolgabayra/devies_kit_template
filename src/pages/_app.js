@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { CacheProvider } from '@emotion/react';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
@@ -22,7 +21,7 @@ const App = (props) => {
   const theme = createTheme();
 
   return (
-    <CacheProvider value={emotionCache}>
+    <>
       <Head>
         <title>
           Devias Kit
@@ -44,7 +43,7 @@ const App = (props) => {
             </AuthConsumer>
           </ThemeProvider>
         </AuthProvider>
-    </CacheProvider>
+    </>
   );
 };
 
